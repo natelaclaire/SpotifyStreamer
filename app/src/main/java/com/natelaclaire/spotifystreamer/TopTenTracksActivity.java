@@ -7,41 +7,33 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 /**
- * Main activity class
+ * Top 10 Tracks activity class
  */
-public class MainActivity extends ActionBarActivity {
+public class TopTenTracksActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_top_ten_tracks);
     }
 
 
-    /**
-     * Inflate options menu, which just has the Settings item for now
-     * @param menu
-     * @return
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_top_ten_tracks, menu);
         return true;
     }
 
-    /**
-     * Handle action bar item clicks
-     * @param item
-     * @return
-     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // ID of item clicked
+
+        // get the ID of the selected item
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
-            // The Settings menu item was clicked
+
+            // start the Settings activity
             Intent settingsIntent = new Intent(this, SettingsActivity.class);
             startActivity(settingsIntent);
             return true;
